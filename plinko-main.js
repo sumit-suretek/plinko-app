@@ -1,5 +1,5 @@
 // plinko-main.js
 
-$(document).ready(function(){
+// $(document).ready(function(){
   alert('hello this is working');
-});
+// });
