@@ -313,7 +313,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	fixDef.friction = 5.0;
 	fixDef.restitution = 0.2;
 	
-	var pointValues = [10, 30, 40, 50, 40, 30, 10,];
+	var pointValues = [10, 30, 0, 50, 0, 30, 10,];
 	for(var col = 0; col < cols + 1; col++) {
 		fixDef.shape = new b2PolygonShape;
 		fixDef.shape.SetAsBox( xDist/2, 0.05 );
