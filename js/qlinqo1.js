@@ -460,17 +460,19 @@ Qlinqo.update = function() {
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
           
-          		document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);
-          		form = $('#frmplinko');
-          		if($('#email').val() !== '' && $('#fullname').val() !== ''){
-                  	$.post(form.attr('action'),form.serialize());
-                    
-//                     location.reload();
-                  
-          			$('#finalmsg').show();
-                  	$('#finalmsg').removeClass('hidden');
-	                $('#frmplinko')[0].reset();
-                  	setTimeout(function(){ location.reload();}, 7000);
+			if(Qlinqo.currentPlayerPoints == "0"){
+				$('#zeronumber').removeClass('hidden');
+				setTimeout(function(){ $('#zeronumber').addClass('hidden');}, 4000);
+			}else{
+          			document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);
+          			form = $('#frmplinko');
+          			if($('#email').val() !== '' && $('#fullname').val() !== ''){
+                  			$.post(form.attr('action'),form.serialize());
+       					$('#finalmsg').show();
+                  			$('#finalmsg').removeClass('hidden');
+	                		$('#frmplinko')[0].reset();
+                  		setTimeout(function(){ location.reload();}, 7000);
+				}
                   	
 //                   $('canvas').remove();
 //                   $('#pageContainer').css('padding','0 35px');
