@@ -463,14 +463,16 @@ Qlinqo.update = function() {
           		document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);
           		form = $('#frmplinko');
           		if($('#email').val() !== '' && $('#fullname').val() !== ''){
-                  	$.post(form.attr('action'),form.serialize());
+                  	$.post(form.attr('action'),form.serialize(),function(out){
+				console.log(out);
+			});
                     
 //                     location.reload();
                   
           			$('#finalmsg').show();
                   	$('#finalmsg').removeClass('hidden');
 	                $('#frmplinko')[0].reset();
-                  	setTimeout(function(){ location.reload();}, 3500);
+//                   	setTimeout(function(){ location.reload();}, 3500);
                   	
 //                   $('canvas').remove();
 //                   $('#pageContainer').css('padding','0 35px');
