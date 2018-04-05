@@ -36,7 +36,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'colors': []
 			, 'defaultFillColor': null
 			, 'defaultStrokeColor': null
-			, 'drawDebugData':true
+			, 'drawDebugData':false
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
@@ -391,12 +391,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-// Qlinqo.fadePegs = function() {
-// 	for(var i in Qlinqo.pegs)
-// 	{
-// 		Qlinqo.pegs[i].fade();
-// 	}
-// };
+Qlinqo.fadePegs = function() {
+	for(var i in Qlinqo.pegs)
+	{
+		Qlinqo.pegs[i].fade();
+	}
+};
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-	//for(var i in Qlinqo.foregroundLayer.children)
-	// {
-	// 	Qlinqo.foregroundLayer.children[i].update();
-	// }
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	}
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
