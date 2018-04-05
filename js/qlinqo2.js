@@ -36,7 +36,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'colors': []
 			, 'defaultFillColor': null
 			, 'defaultStrokeColor': null
-			, 'drawDebugData': false
+			, 'drawDebugData': true
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
