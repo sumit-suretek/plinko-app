@@ -341,7 +341,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	Qlinqo.startOver();
 	
-	window.setInterval(Qlinqo.update, 1000 / 60);
+	//window.setInterval(Qlinqo.update, 1000 / 60);
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
@@ -391,12 +391,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-// Qlinqo.fadePegs = function() {
-// 	for(var i in Qlinqo.pegs)
-// 	{
-// 		Qlinqo.pegs[i].fade();
-// 	}
-// };
+Qlinqo.fadePegs = function() {
+	for(var i in Qlinqo.pegs)
+	{
+		Qlinqo.pegs[i].fade();
+	}
+};
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
