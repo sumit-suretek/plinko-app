@@ -313,7 +313,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	fixDef.friction = 5.0;
 	fixDef.restitution = 0.2;
 	
-	var pointValues = [10, 30, 40, 50, 40, 30, 10,];
+	var pointValues = [10, 30, 0, 50, 0, 30, 10,];
 	for(var col = 0; col < cols + 1; col++) {
 		fixDef.shape = new b2PolygonShape;
 		fixDef.shape.SetAsBox( xDist/2, 0.05 );
@@ -459,18 +459,22 @@ Qlinqo.update = function() {
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
-          
-          		document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);
-          		form = $('#frmplinko');
-          		if($('#email').val() !== '' && $('#fullname').val() !== ''){
-                  $.post(form.attr('action'),form.serialize());
-                    
-//                     location.reload();
-                  
-          			$('#finalmsg').show();
-                  	$('#finalmsg').removeClass('hidden');
-	                $('#frmplinko')[0].reset();
-                  	setTimeout(function(){ location.reload();}, 3500);
+      form = $('#frmplinko');
+      document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
+			if(Qlinqo.currentPlayerPoints == "0"){
+				$('#zeronumber').removeClass('hidden');
+        $.post(form.attr('action'),form.serialize());
+        $('#frmplinko')[0].reset();
+        setTimeout(function(){ location.reload();}, 5000);
+			}else{
+          			
+          			if($('#email').val() !== '' && $('#fullname').val() !== ''){
+                  			$.post(form.attr('action'),form.serialize());
+       					        $('#finalmsg').show();
+                  			$('#finalmsg').removeClass('hidden');
+	                		$('#frmplinko')[0].reset();
+                  		setTimeout(function(){ location.reload();}, 7000);
+				}
                   	
 //                   $('canvas').remove();
 //                   $('#pageContainer').css('padding','0 35px');
@@ -484,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-	for(var i in Qlinqo.foregroundLayer.children)
-	{
-		Qlinqo.foregroundLayer.children[i].update();
-	}
+// 	for(var i in Qlinqo.foregroundLayer.children)
+// 	{
+// 		Qlinqo.foregroundLayer.children[i].update();
+// 	}
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
