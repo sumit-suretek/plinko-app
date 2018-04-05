@@ -36,7 +36,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'colors': []
 			, 'defaultFillColor': null
 			, 'defaultStrokeColor': null
-			, 'drawDebugData': false
+			, 'drawDebugData': true
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
@@ -47,20 +47,13 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 
 	//setup sound effects
 	
-// 	Qlinqo.SfxInterface = new SfxInterface(['Resources/beep1.wav'
-// 										   ,'Resources/beep2.wav'
-// 										   ,'Resources/beep3.wav'
-// 										   ,'Resources/beep4.wav'
-// 										   ,'Resources/points.wav'
-// 										   ,'Resources/zeropoints.wav'
-// 										   ,'Resources/highpoints.wav']);
- 	Qlinqo.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/beep1.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep2.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep3.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep4.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/points.wav'
-										   ,'https://github.com/sumit-suretek/plinko-app/blob/master/zeropoints.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/highpoints.wav']);
+	Qlinqo.SfxInterface = new SfxInterface(['Resources/beep1.wav'
+										   ,'Resources/beep2.wav'
+										   ,'Resources/beep3.wav'
+										   ,'Resources/beep4.wav'
+										   ,'Resources/points.wav'
+										   ,'Resources/zeropoints.wav'
+										   ,'Resources/highpoints.wav']);
 	Qlinqo.SfxInterface.setVolume(0.5);
 	Qlinqo.SfxInterface.setVolumeAt(0, 0.1);
 	Qlinqo.SfxInterface.setVolumeAt(1, 0.1);
@@ -313,7 +306,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	fixDef.friction = 5.0;
 	fixDef.restitution = 0.2;
 	
-	var pointValues = [10, 30, 0, 50, 0, 30, 10,];
+	var pointValues = [10, 30, 40, 50, 40, 30, 10,];
 	for(var col = 0; col < cols + 1; col++) {
 		fixDef.shape = new b2PolygonShape;
 		fixDef.shape.SetAsBox( xDist/2, 0.05 );
@@ -341,7 +334,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	Qlinqo.startOver();
 	
-	window.setInterval(Qlinqo.update, 1000 / 60);
+	//window.setInterval(Qlinqo.update, 1000 / 60);
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
@@ -391,12 +384,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-Qlinqo.fadePegs = function() {
+/*Qlinqo.fadePegs = function() {
 	for(var i in Qlinqo.pegs)
 	{
 		Qlinqo.pegs[i].fade();
 	}
-};
+};*/
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
@@ -459,39 +452,13 @@ Qlinqo.update = function() {
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
-      form = $('#frmplinko');
-      document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
-			if(Qlinqo.currentPlayerPoints == "0"){
-				$('#zeronumber').removeClass('hidden');
-        $.post(form.attr('action'),form.serialize());
-        $('#frmplinko')[0].reset();
-        setTimeout(function(){ location.reload();}, 5000);
-			}else{
-          			
-          			if($('#email').val() !== '' && $('#fullname').val() !== ''){
-                  			$.post(form.attr('action'),form.serialize());
-       					        $('#finalmsg').show();
-                  			$('#finalmsg').removeClass('hidden');
-	                		$('#frmplinko')[0].reset();
-                  		setTimeout(function(){ location.reload();}, 7000);
-				}
-                  	
-//                   $('canvas').remove();
-//                   $('#pageContainer').css('padding','0 35px');
-//                   setupQlinqo();
-                  
-                  
-//                   	setin
-                }
-          
-
 		}
 	}
 
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	}
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	}
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
@@ -550,8 +517,7 @@ Qlinqo.GamePiece = Stratiscape.DrawnObject.extend({ //gamepiece/disk drawn objec
 		this.image.onload = function() {
 				my.imageLoaded = true;
 			};
-// 		this.image.src = 'Resources/ball.png';
-      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
+		this.image.src = 'Resources/ball.png';
 		
 		//set a slight random rotation to make things interesting
 		var omega = Qlinqo.Util.NextRandom(-15, 16);
@@ -600,8 +566,7 @@ Qlinqo.StatusGamePiece = Stratiscape.DrawnObject.extend({ //shows how many balls
 		this.image.onload = function() {
 				my.imageLoaded = true;
 			};
-// 		this.image.src = 'Resources/ball-small.png';
-      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
+		this.image.src = 'Resources/ball-small.png';
 	},
 	
 	draw: function(ctx) {
@@ -638,8 +603,7 @@ Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
 		this.image.onload = function() {
 				my.imageLoaded = true;
 			};
-// 		this.image.src = 'Resources/stake.png';
-      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
+		this.image.src = 'Resources/stake1.png';
 	},
 	
 	// fade: function() {
