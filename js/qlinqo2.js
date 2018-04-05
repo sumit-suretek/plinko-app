@@ -36,7 +36,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'colors': []
 			, 'defaultFillColor': null
 			, 'defaultStrokeColor': null
-			, 'drawDebugData':true
+			, 'drawDebugData':false
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
@@ -67,16 +67,16 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.SfxInterface.setVolumeAt(2, 0.1);
 	Qlinqo.SfxInterface.setVolumeAt(3, 0.2);
 
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 255, 255, 255));//white #ffffff
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 255, 0, 255));//yellow #ffff00
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 165, 0, 255));//orange #ffa500
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 255, 255));//blue #0000ff
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 128, 0, 255));//green #008000
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 0, 0, 255));//red #ff0000
-	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(128, 0, 128, 255));//purple #800080
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//white #ffffff
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//yellow #ffff00
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//orange #ffa500
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//blue #0000ff
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//green #008000
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//red #ff0000
+	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(0, 0, 0, 0));//purple #800080
 	
-	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(255, 174, 4, 1);//(0,128,0,255);
-	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(255, 174, 4, 1);//(0,102,34,255);
+	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(0, 0, 0, 0);//(0,128,0,255);
+	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(0, 0, 0, 0);//(0,102,34,255);
 
 	var groundHeight = 0.1;
 	var scaledWidth = Qlinqo.width/Qlinqo.scale;
@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-	//for(var i in Qlinqo.foregroundLayer.children)
-	// {
-	// 	Qlinqo.foregroundLayer.children[i].update();
-	// }
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	}
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
