@@ -391,12 +391,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-Qlinqo.fadePegs = function() {
-	for(var i in Qlinqo.pegs)
-	{
-		Qlinqo.pegs[i].fade();
-	}
-};
+// Qlinqo.fadePegs = function() {
+// 	for(var i in Qlinqo.pegs)
+// 	{
+// 		Qlinqo.pegs[i].fade();
+// 	}
+// };
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
