@@ -459,30 +459,30 @@ Qlinqo.update = function() {
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
-//       form = $('#frmplinko');
-//       document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
-// 			if(Qlinqo.currentPlayerPoints == "0"){
-// 				$('#zeronumber').removeClass('hidden');
-//         $.post(form.attr('action'),form.serialize());
-//         $('#frmplinko')[0].reset();
-//         setTimeout(function(){ location.reload();}, 5000);
-// 			}else{
+      form = $('#frmplinko');
+      document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
+			if(Qlinqo.currentPlayerPoints == "0"){
+				$('#zeronumber').removeClass('hidden');
+        $.post(form.attr('action'),form.serialize());
+        $('#frmplinko')[0].reset();
+        setTimeout(function(){ location.reload();}, 5000);
+			}else{
           			
-//           			if($('#email').val() !== '' && $('#fullname').val() !== ''){
-//                   			$.post(form.attr('action'),form.serialize());
-//        					        $('#finalmsg').show();
-//                   			$('#finalmsg').removeClass('hidden');
-// 	                		$('#frmplinko')[0].reset();
-//                   		setTimeout(function(){ location.reload();}, 7000);
-// 				}
+          			if($('#email').val() !== '' && $('#fullname').val() !== ''){
+                  			$.post(form.attr('action'),form.serialize());
+       					        $('#finalmsg').show();
+                  			$('#finalmsg').removeClass('hidden');
+	                		$('#frmplinko')[0].reset();
+                  		setTimeout(function(){ location.reload();}, 7000);
+				}
                   	
-// //                   $('canvas').remove();
-// //                   $('#pageContainer').css('padding','0 35px');
-// //                   setupQlinqo();
+//                   $('canvas').remove();
+//                   $('#pageContainer').css('padding','0 35px');
+//                   setupQlinqo();
                   
                   
-// //                   	setin
-//                 }
+//                   	setin
+                }
           
 
 		}
