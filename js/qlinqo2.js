@@ -459,18 +459,16 @@ Qlinqo.update = function() {
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
-      form = $('#frmplinko');
-      document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
+          
 			if(Qlinqo.currentPlayerPoints == "0"){
 				$('#zeronumber').removeClass('hidden');
-        $.post(form.attr('action'),form.serialize());
-        $('#frmplinko')[0].reset();
-        setTimeout(function(){ location.reload();}, 5000);
+				setTimeout(function(){ $('#zeronumber').addClass('hidden');}, 4000);
 			}else{
-          			
+          			document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);
+          			form = $('#frmplinko');
           			if($('#email').val() !== '' && $('#fullname').val() !== ''){
                   			$.post(form.attr('action'),form.serialize());
-       					        $('#finalmsg').show();
+       					$('#finalmsg').show();
                   			$('#finalmsg').removeClass('hidden');
 	                		$('#frmplinko')[0].reset();
                   		setTimeout(function(){ location.reload();}, 7000);
@@ -488,10 +486,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	}
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	}
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
