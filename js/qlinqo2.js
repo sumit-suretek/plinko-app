@@ -341,7 +341,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	Qlinqo.startOver();
 	
-	//window.setInterval(Qlinqo.update, 1000 / 60);
+	window.setInterval(Qlinqo.update, 1000 / 60);
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
