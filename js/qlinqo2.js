@@ -205,7 +205,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	// backgroundLayer.addChild(new Qlinqo.Rect(0.1, 0, scaledWidth - 0.2, 2, new Qlinqo.Util.ColorRGBA(221, 221, 221, 0), new Qlinqo.Util.ColorRGBA(128, 128, 128, 255)));
 	//playfieldLayer.addChild(new Qlinqo.Rect(0.1, 0, scaledWidth - 0.2, 2, new Qlinqo.Util.ColorRGBA(0, 0, 0, 255), new Qlinqo.Util.ColorRGBA(0, 0, 0, 255)));
 	// backgroundLayer.addChild(new Qlinqo.NeonText(scaledWidth/2, scaledHeight/2, "Qlinqo", 60));
-					// test comment
+	
 	//setup vars
 	var pegRadius = 0.1;
 	var pegCount = 6;
@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-	for(var i in Qlinqo.foregroundLayer.children)
-	{
-		Qlinqo.foregroundLayer.children[i].update();
-	} 
+// 	for(var i in Qlinqo.foregroundLayer.children)
+// 	{
+// 		Qlinqo.foregroundLayer.children[i].update();
+// 	} 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
