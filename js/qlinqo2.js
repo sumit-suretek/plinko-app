@@ -341,7 +341,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	Qlinqo.startOver();
 	
-	//window.setInterval(Qlinqo.update, 1000 / 60);
+	window.setInterval(Qlinqo.update, 1000 / 60);
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
@@ -391,22 +391,19 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-// Qlinqo.fadePegs = function() {
-// 	for(var i in Qlinqo.pegs)
-// 	{
-// 		Qlinqo.pegs[i].fade();
-// 	}
-// };
-  	
-  	//commented for test
+Qlinqo.fadePegs = function() {
+	for(var i in Qlinqo.pegs)
+	{
+		Qlinqo.pegs[i].fade();
+	}
+};
 
-
-	Qlinqo.startOver = function() {
-		Qlinqo.currentPlayerPoints = 0;
-		Qlinqo.ballsLeft = 1;
-		Qlinqo.ballsScored = 0;
-		Qlinqo.pointTextObject.layer.needsDisplay = true;
-		Qlinqo.statusLayer.needsDisplay = true;
+Qlinqo.startOver = function() {
+	Qlinqo.currentPlayerPoints = 0;
+	Qlinqo.ballsLeft = 1;
+	Qlinqo.ballsScored = 0;
+	Qlinqo.pointTextObject.layer.needsDisplay = true;
+	Qlinqo.statusLayer.needsDisplay = true;
 	
 	Qlinqo.pointTextObject.text = 0;
 	//setup our status object for current points and balls left
@@ -479,9 +476,9 @@ Qlinqo.update = function() {
                   		setTimeout(function(){ location.reload();}, 7000);
 				}
                   	
-//                   $('canvas').remove();
-//                   $('#pageContainer').css('padding','0 35px');
-//                   setupQlinqo();
+                  // $('canvas').remove();
+                  // $('#pageContainer').css('padding','0 35px');
+                  // setupQlinqo();
                   
                   
 //                   	setin
@@ -491,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	} 
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	} 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
@@ -1043,8 +1040,3 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
-
-
-
-
-//updated
