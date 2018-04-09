@@ -16,7 +16,7 @@ var FW = {
 		FW.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/boom.wav']);
 		FW.SfxInterface.setVolume(0.2);
 		
-		
+		/*
 		FW.imageData = new Image();
 		FW.imageData.src = 'Resources/round-grad.png';
 		var canvas = document.createElement('canvas');
@@ -32,7 +32,7 @@ var FW = {
 			st += imageData.data[i] + ",";
 		}
 		document.getElementById('debugData').innerHTML = st;
-		
+		*/
 		
 		FW.imageOrig = foregroundLayer.ctx.createImageData(16, 16);
 		for (var i = 0; i < FW.imageData.length; i+=4)
@@ -247,3 +247,4 @@ FW.Util.ChangeImageColor = function(/*Image bitmap array*/ bmpArr, /*ColorRGBA*/
 	
 	return retBmpArr;
 };
+    
