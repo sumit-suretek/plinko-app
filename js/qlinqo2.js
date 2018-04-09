@@ -488,11 +488,11 @@ Qlinqo.update = function() {
 		}
 	}
 
-	for(var i in Qlinqo.foregroundLayer.children)
-	{
-		Qlinqo.foregroundLayer.children[i].update();
-	} 
-		//comment test
+// 	for(var i in Qlinqo.foregroundLayer.children)
+// 	{
+// 		Qlinqo.foregroundLayer.children[i].update();
+// 	} 
+
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
@@ -1039,4 +1039,5 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 			ret.push(obj);
 		}
 		return ret;
-	}; 
+	};
+//// origional qlinqow.js
