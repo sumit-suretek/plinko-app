@@ -391,12 +391,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-// Qlinqo.fadePegs = function() {
-// 	for(var i in Qlinqo.pegs)
-// 	{
-// 		Qlinqo.pegs[i].fade();
-// 	}
-// };
+Qlinqo.fadePegs = function() {
+	for(var i in Qlinqo.pegs)
+	{
+		Qlinqo.pegs[i].fade();
+	}
+};
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
@@ -476,9 +476,9 @@ Qlinqo.update = function() {
                   		setTimeout(function(){ location.reload();}, 7000);
 				}
                   	
-//                   $('canvas').remove();
-//                   $('#pageContainer').css('padding','0 35px');
-//                   setupQlinqo();
+                  $('canvas').remove();
+                  $('#pageContainer').css('padding','0 35px');
+                  setupQlinqo();
                   
                   
 //                   	setin
@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	} 
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	} 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
@@ -822,54 +822,54 @@ Qlinqo.NeonText = Stratiscape.DrawnObject.extend({ //Text with a Neon glow drawn
 		}
 	},
 	
-	// draw: function(ctx) {
+	draw: function(ctx) {
 	
-	// 	var text = this.text;
+		var text = this.text;
 		
-	// 	ctx.font = "bolder " + this.size + "px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif";
-	// 	ctx.textAlign = "left";
-	// 	ctx.textBaseline = 'middle';
-	// 	var textHeight = this.size * 3.5;
-	// 	var textTop = textHeight/2;
+		ctx.font = "bolder " + this.size + "px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif";
+		ctx.textAlign = "left";
+		ctx.textBaseline = 'middle';
+		var textHeight = this.size * 3.5;
+		var textTop = textHeight/2;
 		
-	// 	var width = ctx.measureText(text).width;
-	// 	var xOffset = -width/2;
-	// 	if(this.align == "left")
-	// 		xOffset = 0;
-	// 	else if(this.align == "right")
-	// 		xOffset = -width;
-	// 	// add a background to the current effect
-	// 	ctx.fillStyle = this.background;
-	// 	ctx.fillRect(this.x + xOffset, this.y, width, textHeight - 1)
-	// 	// parse text-shadows from css
-	// 	var shadows = Qlinqo.Util.parseShadow(this.shadow);
-	// 	// loop through the shadow collection
-	// 	var n = shadows.length; while(n--) {
-	// 		var shadow = shadows[n];
-	// 		var totalWidth = width + shadow.blur * 2;
-	// 		ctx.save();
-	// 		ctx.beginPath();
-	// 		ctx.rect(this.x + xOffset - shadow.blur, this.y, this.x + xOffset + totalWidth, textHeight);
-	// 		ctx.clip();
-	// 		if (shadow.blur) { // just run shadow (clip text)
-	// 			ctx.shadowColor = shadow.color;
-	// 			ctx.shadowOffsetX = shadow.x + totalWidth;
-	// 			ctx.shadowOffsetY = shadow.y;
-	// 			ctx.shadowBlur = shadow.blur;
-	// 			ctx.fillText(text, -totalWidth + this.x + xOffset, this.y + textTop);
-	// 		} else { // just run pseudo-shadow
-	// 			ctx.fillStyle = shadow.color;
-	// 			ctx.fillText(text, this.x + xOffset + (shadow.x||0), this.y - (shadow.y||0) + textTop);
-	// 		}
-	// 		ctx.restore();
-	// 	}
-	// 	// drawing the text in the foreground
-	// 	if (this.color) {
-	// 		ctx.fillStyle = this.color;
-	// 		ctx.fillText(text, this.x + xOffset, this.y + textTop);
-	// 	}
+		var width = ctx.measureText(text).width;
+		var xOffset = -width/2;
+		if(this.align == "left")
+			xOffset = 0;
+		else if(this.align == "right")
+			xOffset = -width;
+		// add a background to the current effect
+		ctx.fillStyle = this.background;
+		ctx.fillRect(this.x + xOffset, this.y, width, textHeight - 1)
+		// parse text-shadows from css
+		var shadows = Qlinqo.Util.parseShadow(this.shadow);
+		// loop through the shadow collection
+		var n = shadows.length; while(n--) {
+			var shadow = shadows[n];
+			var totalWidth = width + shadow.blur * 2;
+			ctx.save();
+			ctx.beginPath();
+			ctx.rect(this.x + xOffset - shadow.blur, this.y, this.x + xOffset + totalWidth, textHeight);
+			ctx.clip();
+			if (shadow.blur) { // just run shadow (clip text)
+				ctx.shadowColor = shadow.color;
+				ctx.shadowOffsetX = shadow.x + totalWidth;
+				ctx.shadowOffsetY = shadow.y;
+				ctx.shadowBlur = shadow.blur;
+				ctx.fillText(text, -totalWidth + this.x + xOffset, this.y + textTop);
+			} else { // just run pseudo-shadow
+				ctx.fillStyle = shadow.color;
+				ctx.fillText(text, this.x + xOffset + (shadow.x||0), this.y - (shadow.y||0) + textTop);
+			}
+			ctx.restore();
+		}
+		// drawing the text in the foreground
+		if (this.color) {
+			ctx.fillStyle = this.color;
+			ctx.fillText(text, this.x + xOffset, this.y + textTop);
+		}
 		
-	// }
+	}
 	
 });
 
