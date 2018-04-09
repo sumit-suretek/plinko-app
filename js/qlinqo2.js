@@ -487,11 +487,11 @@ Qlinqo.update = function() {
 
 		}
 	}
-		//  testcomment
-	for(var i in Qlinqo.foregroundLayer.children)
-	{
-	   Qlinqo.foregroundLayer.children[i].update();
-	} 
+		//  testcomment    vvvvv
+	 for(var i in Qlinqo.foregroundLayer.children)
+	 {
+	     Qlinqo.foregroundLayer.children[i].update();
+	 } 
 		//  testcomment
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
