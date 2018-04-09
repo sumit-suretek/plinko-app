@@ -1,9 +1,5 @@
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
-
-		//updated code test 
-			
-
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       || 
 		  window.webkitRequestAnimationFrame || 
@@ -345,7 +341,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	Qlinqo.startOver();
 	
-	window.setInterval(Qlinqo.update, 1000 / 60);
+	//window.setInterval(Qlinqo.update, 1000 / 60);
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
@@ -395,12 +391,12 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-Qlinqo.fadePegs = function() {
-	for(var i in Qlinqo.pegs)
-	{
-		Qlinqo.pegs[i].fade();
-	}
-};
+// Qlinqo.fadePegs = function() {
+// 	for(var i in Qlinqo.pegs)
+// 	{
+// 		Qlinqo.pegs[i].fade();
+// 	}
+// };
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
@@ -480,9 +476,9 @@ Qlinqo.update = function() {
                   		setTimeout(function(){ location.reload();}, 7000);
 				}
                   	
-                  $('canvas').remove();
-                  $('#pageContainer').css('padding','0 35px');
-                  setupQlinqo();
+//                   $('canvas').remove();
+//                   $('#pageContainer').css('padding','0 35px');
+//                   setupQlinqo();
                   
                   
 //                   	setin
@@ -491,12 +487,12 @@ Qlinqo.update = function() {
 
 		}
 	}
-		//  testcomment    vvvvv
-	 for(var i in Qlinqo.foregroundLayer.children)
-	 {
-	     Qlinqo.foregroundLayer.children[i].update();
-	 } 
-		//  testcomment
+
+// 	for(var i in Qlinqo.foregroundLayer.children)
+// 	{
+// 		Qlinqo.foregroundLayer.children[i].update();
+// 	} 
+
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
@@ -1044,3 +1040,4 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
+//origional
