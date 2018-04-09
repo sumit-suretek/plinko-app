@@ -511,8 +511,9 @@ Qlinqo.update = function() {
 	
 	
 	
+	
 	//draw grid lines
-	/*
+	
 	var ctx = document.StratiscapeDraw.getLayer('canvasQlinqoBackground').ctx;
 	ctx.strokeStyle = '#EEE';
 	for(var row = 0; row < Qlinqo.width/Qlinqo.scale; row++)
@@ -531,7 +532,6 @@ Qlinqo.update = function() {
 		ctx.closePath();
 		ctx.stroke();
 	}
-	*/
 	
 };
 
@@ -579,7 +579,7 @@ Qlinqo.GamePiece = Stratiscape.DrawnObject.extend({ //gamepiece/disk drawn objec
 			setTimeout(function() {my.draw(ctx);}, 20);
 		}
 	
-		//ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
 	}
 	
 });
@@ -642,18 +642,18 @@ Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
       	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
 	},
 	
-	// fade: function() {
-	// 	if(!this.color.equals(Qlinqo.defaultFillColor))	{
-	// 		this.color.fadeTo(Qlinqo.defaultFillColor);
-	// 		this.layer.needsDisplay = true;
-	// 	}
-	// },
+	fade: function() {
+		if(!this.color.equals(Qlinqo.defaultFillColor))	{
+			this.color.fadeTo(Qlinqo.defaultFillColor);
+			this.layer.needsDisplay = true;
+		}
+	},
 	
-	// highlight: function(highlighted, color) {
-	// 	this.highlighted = highlighted;
-	// 	this.color = color;
-	// 	this.layer.needsDisplay = true;
-	// },
+	highlight: function(highlighted, color) {
+		this.highlighted = highlighted;
+		this.color = color;
+		this.layer.needsDisplay = true;
+	},
 	
 	draw: function(ctx) {
 		if(this.imageLoaded) {
