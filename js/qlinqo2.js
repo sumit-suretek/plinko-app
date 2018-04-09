@@ -1039,4 +1039,4 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 			ret.push(obj);
 		}
 		return ret;
-	};
+	}; 
