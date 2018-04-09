@@ -1,4 +1,3 @@
-//update
 
 var FW = {
 	'foregroundLayer':null,
@@ -19,6 +18,7 @@ var FW = {
 		FW.SfxInterface.setVolume(0.2);
 	
 		 // test plinko	 app	
+		/*
 		FW.imageData = new Image();
 		FW.imageData.src = 'Resources/round-grad.png';
 		var canvas = document.createElement('canvas');
@@ -34,7 +34,8 @@ var FW = {
 			st += imageData.data[i] + ",";
 		}
 		document.getElementById('debugData').innerHTML = st;
-		
+		*/
+
 		
 		FW.imageOrig = foregroundLayer.ctx.createImageData(16, 16);
 		for (var i = 0; i < FW.imageData.length; i+=4)
