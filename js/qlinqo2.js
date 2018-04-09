@@ -397,7 +397,7 @@ Qlinqo.newGamePiece = function(x, y) {
 // 		Qlinqo.pegs[i].fade();
 // 	}
 // };
-
+  		//commented
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
 	Qlinqo.ballsLeft = 1;
