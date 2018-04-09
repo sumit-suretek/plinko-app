@@ -476,9 +476,9 @@ Qlinqo.update = function() {
                   		setTimeout(function(){ location.reload();}, 7000);
 				}
                   	
-                  // $('canvas').remove();
-                  // $('#pageContainer').css('padding','0 35px');
-                  // setupQlinqo();
+                  $('canvas').remove();
+                  $('#pageContainer').css('padding','0 35px');
+                  setupQlinqo();
                   
                   
 //                   	setin
@@ -492,7 +492,7 @@ Qlinqo.update = function() {
 	{
 		Qlinqo.foregroundLayer.children[i].update();
 	} 
-
+		// testcomment
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
