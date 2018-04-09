@@ -86,10 +86,10 @@ var FW = {
 	
 	Update: function() {
 	
-// 		for(var i in FW.foregroundLayer.children)
-// 		{
-// 		FW.foregroundLayer.children[i].update();
-// 		}
+		for(var i in FW.foregroundLayer.children)
+		{
+		FW.foregroundLayer.children[i].update();
+		}
 		
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
 	},
