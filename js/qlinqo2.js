@@ -491,7 +491,7 @@ Qlinqo.update = function() {
 // 	for(var i in Qlinqo.foregroundLayer.children)
 // 	{
 // 		Qlinqo.foregroundLayer.children[i].update();
-// 	}
+// 	} 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
