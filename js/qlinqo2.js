@@ -397,13 +397,16 @@ Qlinqo.newGamePiece = function(x, y) {
 // 		Qlinqo.pegs[i].fade();
 // 	}
 // };
-  		//commented
-Qlinqo.startOver = function() {
-	Qlinqo.currentPlayerPoints = 0;
-	Qlinqo.ballsLeft = 1;
-	Qlinqo.ballsScored = 0;
-	Qlinqo.pointTextObject.layer.needsDisplay = true;
-	Qlinqo.statusLayer.needsDisplay = true;
+  	
+  	//commented for test
+
+
+	Qlinqo.startOver = function() {
+		Qlinqo.currentPlayerPoints = 0;
+		Qlinqo.ballsLeft = 1;
+		Qlinqo.ballsScored = 0;
+		Qlinqo.pointTextObject.layer.needsDisplay = true;
+		Qlinqo.statusLayer.needsDisplay = true;
 	
 	Qlinqo.pointTextObject.text = 0;
 	//setup our status object for current points and balls left
@@ -1040,4 +1043,8 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
+
+
+
+
 //updated
