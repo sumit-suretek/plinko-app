@@ -642,6 +642,8 @@ Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
       	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
 	},
 	
+// testcommnt
+	
 	// fade: function() {
 	// 	if(!this.color.equals(Qlinqo.defaultFillColor))	{
 	// 		this.color.fadeTo(Qlinqo.defaultFillColor);
