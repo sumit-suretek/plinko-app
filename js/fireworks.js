@@ -1,4 +1,4 @@
-// edit updated
+// updated
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
