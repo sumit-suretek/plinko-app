@@ -514,7 +514,7 @@ Qlinqo.update = function() {
 	
 	//draw grid lines
 	
-	     var ctx = document.StratiscapeDraw.getLayer('canvasQlinqoBackground').ctx;
+	var ctx = document.StratiscapeDraw.getLayer('canvasQlinqoBackground').ctx;
 	ctx.strokeStyle = '#EEE';
 	for(var row = 0; row < Qlinqo.width/Qlinqo.scale; row++)
 	{
@@ -642,18 +642,18 @@ Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
       	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
 	},
 	
-	fade: function() {
-		if(!this.color.equals(Qlinqo.defaultFillColor))	{
-			this.color.fadeTo(Qlinqo.defaultFillColor);
-			this.layer.needsDisplay = true;
-		}
-	},
+	// fade: function() {
+	// 	if(!this.color.equals(Qlinqo.defaultFillColor))	{
+	// 		this.color.fadeTo(Qlinqo.defaultFillColor);
+	// 		this.layer.needsDisplay = true;
+	// 	}
+	// },
 	
-	highlight: function(highlighted, color) {
-		this.highlighted = highlighted;
-		this.color = color;
-		this.layer.needsDisplay = true;
-	},
+	// highlight: function(highlighted, color) {
+	// 	this.highlighted = highlighted;
+	// 	this.color = color;
+	// 	this.layer.needsDisplay = true;
+	// },
 	
 	draw: function(ctx) {
 		if(this.imageLoaded) {
@@ -1040,4 +1040,3 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
-//comments
