@@ -1,4 +1,4 @@
-// edit
+// edit update
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
@@ -17,7 +17,7 @@ var FW = {
 		FW.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/boom.wav']);
 		FW.SfxInterface.setVolume(0.2);
 		
-		
+		/*
 		FW.imageData = new Image();
 		FW.imageData.src = 'Resources/round-grad.png';
 		var canvas = document.createElement('canvas');
@@ -33,7 +33,7 @@ var FW = {
 			st += imageData.data[i] + ",";
 		}
 		document.getElementById('debugData').innerHTML = st;
-		
+		*/
 		//uncomment
 		FW.imageOrig = foregroundLayer.ctx.createImageData(16, 16);
 		for (var i = 0; i < FW.imageData.length; i+=4)
