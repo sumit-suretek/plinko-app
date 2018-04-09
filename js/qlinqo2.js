@@ -130,7 +130,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 		if(drawnFixedObject) {
 			if(drawnFixedObject instanceof Qlinqo.Peg) {
 				//drawnFixedObject.highlight(true, Qlinqo.colors[Qlinqo.Util.NextRandom(0, Qlinqo.colors.length)]);
-				
+				testcakid@gmail.co
 				//play high sound
 				Qlinqo.SfxInterface.playFileAt(Qlinqo.Util.NextRandom(0, 3));
 			}
@@ -150,7 +150,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 					pointPlate = contact.m_nodeB.other;
 				var points = pointPlate.pointValue;
 				Qlinqo.currentPlayerPoints += points;
-				
+				testcakid@gmail.co
 				if(!points) {
 					Qlinqo.SfxInterface.playFileAt(5);
 				} else {
@@ -167,7 +167,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 				Qlinqo.pointTextObject.layer.needsDisplay = true;
 				
 			}
-		}
+		}testcakid@gmail.co
 		else {
 			//console.log('something just hit something else');
 		}
@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	} 
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i].update();
+	} 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
