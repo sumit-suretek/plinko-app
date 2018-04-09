@@ -280,7 +280,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 							 , bodyDef.position.y
 							 , 0.2
 							 , 0.2);
-			playfieldLayer.addChild(peg);
+			playfieldLayer.addChild(peg);debugLayer
 			
 			Qlinqo.pegs.push(peg);
 		 
@@ -337,7 +337,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 		debugDraw.SetLineThickness(1.0);
 		debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
 		Qlinqo.world.SetDebugDraw(debugDraw);
-	}
+	}debugLayer
 	
 	Qlinqo.startOver();
 	
@@ -360,7 +360,7 @@ Qlinqo.newGamePiece = function(x, y) {
 		fixDef.restitution = 0.4;
 
 		//create the box2d object
-		bodyDef.type = Box2D.Dynamics.b2Body.b2_dynamicBody;
+		bodyDef.type = Box2D.Dynamics.b2Body.b2_dynamicBody;debugLayer
 
 		fixDef.shape = new Box2D.Collision.Shapes.b2CircleShape(Qlinqo.radiusDisk);
 		//make a bit of noise to make things interesting
@@ -641,9 +641,8 @@ Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
 // 		this.image.src = 'Resources/stake.png';
       	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
 	},
-	
-// testcommnt
-	
+		// testcommnt
+		//sfdj
 	// fade: function() {
 	// 	if(!this.color.equals(Qlinqo.defaultFillColor))	{
 	// 		this.color.fadeTo(Qlinqo.defaultFillColor);
