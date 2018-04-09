@@ -16,7 +16,7 @@ var FW = {
 		FW.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/boom.wav']);
 		FW.SfxInterface.setVolume(0.2);
 		
-		
+		    // teststst
 		FW.imageData = new Image();
 		FW.imageData.src = 'Resources/round-grad.png';
 		var canvas = document.createElement('canvas');
