@@ -514,7 +514,7 @@ Qlinqo.update = function() {
 	
 	//draw grid lines
 	
-	var ctx = document.StratiscapeDraw.getLayer('canvasQlinqoBackground').ctx;
+	     var ctx = document.StratiscapeDraw.getLayer('canvasQlinqoBackground').ctx;
 	ctx.strokeStyle = '#EEE';
 	for(var row = 0; row < Qlinqo.width/Qlinqo.scale; row++)
 	{
@@ -1040,4 +1040,4 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
- 
+//comments
