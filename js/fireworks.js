@@ -1,3 +1,6 @@
+//fireworks.js from qlinqo
+
+
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
@@ -13,7 +16,7 @@ var FW = {
 		FW.foregroundLayer=foregroundLayer;
 		
 		
-		FW.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/boom.wav']);
+		FW.SfxInterface = new SfxInterface(['Resources/boom.wav']);
 		FW.SfxInterface.setVolume(0.2);
 		
 		/*
@@ -33,7 +36,7 @@ var FW = {
 		}
 		document.getElementById('debugData').innerHTML = st;
 		*/
-		//uncomment
+		
 		FW.imageOrig = foregroundLayer.ctx.createImageData(16, 16);
 		for (var i = 0; i < FW.imageData.length; i+=4)
 		{
@@ -85,12 +88,12 @@ var FW = {
 	},
 	
 	Update: function() {
-		//	error start
+	
 		for(var i in FW.foregroundLayer.children)
 		{
 			FW.foregroundLayer.children[i].update();
 		}
-		//	uncomment 	
+		
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
 	},
 	
@@ -167,7 +170,7 @@ FW.Particle = Stratiscape.DrawnObject.extend({ //particle class
 	},
 	
 	draw: function(ctx) {
-		ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		//ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
 		ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
 	}
 	
@@ -247,4 +250,3 @@ FW.Util.ChangeImageColor = function(/*Image bitmap array*/ bmpArr, /*ColorRGBA*/
 	
 	return retBmpArr;
 };
-//ended
