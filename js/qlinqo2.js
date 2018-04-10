@@ -1,5 +1,3 @@
-	// new code
-
 //  qlinqo.js from qlinqo
 
 
@@ -996,3 +994,5 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
+
+//line no 998
