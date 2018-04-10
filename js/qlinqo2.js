@@ -487,12 +487,13 @@ Qlinqo.update = function() {
 
 		}
 	}
-console.log(Qlinqo.foregroundLayer.children);
+		//	error start
+		//console.log(Qlinqo.foregroundLayer.children);
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		//Qlinqo.foregroundLayer.children[i].update();
+		Qlinqo.foregroundLayer.children[i].update();
 	} 
-		//updated
+		//uncomment
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
