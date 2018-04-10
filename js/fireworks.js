@@ -1,4 +1,4 @@
-// updated code
+// reverse code
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
