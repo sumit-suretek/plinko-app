@@ -1,4 +1,4 @@
-/qlinqo.js from qlinqo
+//qlinqo.js from qlinqo
 
 
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
