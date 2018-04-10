@@ -1,3 +1,6 @@
+/qlinqo.js from qlinqo
+
+
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -29,14 +32,14 @@ var Qlinqo = {'foregroundLayer':null
 			, 'world': null
 			, 'gamePieces': []
 			, 'pegs': []
-			, 'width':350.0
-			, 'height':500.0
+			, 'width':480.0
+			, 'height':640.0
 			, 'scale': 40.0
 			, 'radiusDisk': 0.3
 			, 'colors': []
 			, 'defaultFillColor': null
 			, 'defaultStrokeColor': null
-			, 'drawDebugData': true
+			, 'drawDebugData': false
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
@@ -47,20 +50,13 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 
 	//setup sound effects
 	
-// 	Qlinqo.SfxInterface = new SfxInterface(['Resources/beep1.wav'
-// 										   ,'Resources/beep2.wav'
-// 										   ,'Resources/beep3.wav'
-// 										   ,'Resources/beep4.wav'
-// 										   ,'Resources/points.wav'
-// 										   ,'Resources/zeropoints.wav'
-// 										   ,'Resources/highpoints.wav']);
- 	Qlinqo.SfxInterface = new SfxInterface(['https://rawgit.com/sumit-suretek/plinko-app/master/beep1.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep2.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep3.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/beep4.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/points.wav'
-										   ,'https://github.com/sumit-suretek/plinko-app/blob/master/zeropoints.wav'
-										   ,'https://rawgit.com/sumit-suretek/plinko-app/master/highpoints.wav']);
+	Qlinqo.SfxInterface = new SfxInterface(['Resources/beep1.wav'
+										   ,'Resources/beep2.wav'
+										   ,'Resources/beep3.wav'
+										   ,'Resources/beep4.wav'
+										   ,'Resources/points.wav'
+										   ,'Resources/zeropoints.wav'
+										   ,'Resources/highpoints.wav']);
 	Qlinqo.SfxInterface.setVolume(0.5);
 	Qlinqo.SfxInterface.setVolumeAt(0, 0.1);
 	Qlinqo.SfxInterface.setVolumeAt(1, 0.1);
@@ -75,8 +71,8 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 0, 0, 255));//red #ff0000
 	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(128, 0, 128, 255));//purple #800080
 	
-	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(255, 174, 4, 1);//(0,128,0,255);
-	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(255, 174, 4, 1);//(0,102,34,255);
+	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(153, 102, 51, 255);//(0,128,0,255);
+	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(102, 51, 17, 255);//(0,102,34,255);
 
 	var groundHeight = 0.1;
 	var scaledWidth = Qlinqo.width/Qlinqo.scale;
@@ -200,23 +196,23 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.world.CreateBody(bodyDef).CreateFixture(fixDef);
 	playfieldLayer.addChild(new Qlinqo.Rect(scaledWidth - 0.1, 0, 0.1, scaledHeight, Qlinqo.defaultFillColor,  Qlinqo.defaultStrokeColor));
 	
-	// backgroundLayer.addChild(new Qlinqo.NeonText(scaledWidth/2, 0.4, "Qliq Here", 26, "center", "#008000", "#008000"));
+	backgroundLayer.addChild(new Qlinqo.NeonText(scaledWidth/2, 0.4, "Qliq Here", 26, "center", "#008000", "#008000"));
 	
-	// backgroundLayer.addChild(new Qlinqo.Rect(0.1, 0, scaledWidth - 0.2, 2, new Qlinqo.Util.ColorRGBA(221, 221, 221, 0), new Qlinqo.Util.ColorRGBA(128, 128, 128, 255)));
+	backgroundLayer.addChild(new Qlinqo.Rect(0.1, 0, scaledWidth - 0.2, 2, new Qlinqo.Util.ColorRGBA(221, 221, 221, 0), new Qlinqo.Util.ColorRGBA(128, 128, 128, 255)));
 	//playfieldLayer.addChild(new Qlinqo.Rect(0.1, 0, scaledWidth - 0.2, 2, new Qlinqo.Util.ColorRGBA(0, 0, 0, 255), new Qlinqo.Util.ColorRGBA(0, 0, 0, 255)));
-	// backgroundLayer.addChild(new Qlinqo.NeonText(scaledWidth/2, scaledHeight/2, "Qlinqo", 60));
+	backgroundLayer.addChild(new Qlinqo.NeonText(scaledWidth/2, scaledHeight/2, "Qlinqo", 60));
 	
 	//setup vars
 	var pegRadius = 0.1;
-	var pegCount = 6;
+	var pegCount = 10;
 	var padding = 2;
 	var scaledPadding = padding * Qlinqo.scale;
 	var xDist = (Qlinqo.width/Qlinqo.scale - padding)/(pegCount - 1);//1.1;//(radiusDisk * 2.5);
-	var yDist = xDist * Math.sqrt(2.5)/2.0;
+	var yDist = xDist * Math.sqrt(3)/2.0;
 	var rows = ((Qlinqo.height - scaledPadding)/Qlinqo.scale) / xDist;
 	var cols = Math.floor(((Qlinqo.width - scaledPadding)/Qlinqo.scale) / yDist);
 	
-	var yBodyStart = 2;//where we start building the pegs and polygons
+	var yBodyStart = 3;//where we start building the pegs and polygons
 	
 	//since box2d seems to not like concave polygon collision detection,
 	// we'll create triangles for the sides
@@ -313,7 +309,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	fixDef.friction = 5.0;
 	fixDef.restitution = 0.2;
 	
-	var pointValues = [10, 30, 0, 50, 0, 30, 10,];
+	var pointValues = [5000, 100, 500, 1000, 0, 10000, 0, 1000, 500, 100, 5000];
 	for(var col = 0; col < cols + 1; col++) {
 		fixDef.shape = new b2PolygonShape;
 		fixDef.shape.SetAsBox( xDist/2, 0.05 );
@@ -324,7 +320,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 		body.CreateFixture(fixDef);
 		
 		//add the text for the slot point value
-		backgroundLayer.addChild(new Qlinqo.PointValueText(0.45 + (col * xDist), groundTop + 0, pointValues[col])); 
+		backgroundLayer.addChild(new Qlinqo.PointValueText(0.45 + (col * xDist), groundTop - 0.2, pointValues[col])); 
 	}
 
 	//setup debug draw
@@ -391,16 +387,16 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-// Qlinqo.fadePegs = function() {
-// 	for(var i in Qlinqo.pegs)
-// 	{
-// 		Qlinqo.pegs[i].fade();
-// 	}
-// };
+Qlinqo.fadePegs = function() {
+	for(var i in Qlinqo.pegs)
+	{
+		Qlinqo.pegs[i].fade();
+	}
+};
 
 Qlinqo.startOver = function() {
 	Qlinqo.currentPlayerPoints = 0;
-	Qlinqo.ballsLeft = 1;
+	Qlinqo.ballsLeft = 5;
 	Qlinqo.ballsScored = 0;
 	Qlinqo.pointTextObject.layer.needsDisplay = true;
 	Qlinqo.statusLayer.needsDisplay = true;
@@ -459,41 +455,14 @@ Qlinqo.update = function() {
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
-      form = $('#frmplinko');
-      document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
-			if(Qlinqo.currentPlayerPoints == "0"){
-				$('#zeronumber').removeClass('hidden');
-        $.post(form.attr('action'),form.serialize());
-        $('#frmplinko')[0].reset();
-        setTimeout(function(){ location.reload();}, 5000);
-			}else{
-          			
-          			if($('#email').val() !== '' && $('#fullname').val() !== ''){
-                  			$.post(form.attr('action'),form.serialize());
-       					        $('#finalmsg').show();
-                  			$('#finalmsg').removeClass('hidden');
-	                		$('#frmplinko')[0].reset();
-                  		setTimeout(function(){ location.reload();}, 7000);
-				}
-                  	
-//                   $('canvas').remove();
-//                   $('#pageContainer').css('padding','0 35px');
-//                   setupQlinqo();
-                  
-                  
-//                   	setin
-                }
-          
-
 		}
 	}
-		//	error start
-		//console.log(Qlinqo.foregroundLayer.children);
+
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
 		Qlinqo.foregroundLayer.children[i].update();
-	} 
-		//uncomment
+	}
+
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
@@ -551,8 +520,7 @@ Qlinqo.GamePiece = Stratiscape.DrawnObject.extend({ //gamepiece/disk drawn objec
 		this.image.onload = function() {
 				my.imageLoaded = true;
 			};
-// 		this.image.src = 'Resources/ball.png';
-      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
+		this.image.src = 'Resources/ball.png';
 		
 		//set a slight random rotation to make things interesting
 		var omega = Qlinqo.Util.NextRandom(-15, 16);
@@ -601,9 +569,7 @@ Qlinqo.StatusGamePiece = Stratiscape.DrawnObject.extend({ //shows how many balls
 		this.image.onload = function() {
 				my.imageLoaded = true;
 			};
-// 		this.image.src = 'Resources/ball-small.png';
-//      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
-		this.image.src = 'https://raw.githubusercontent.com/sumit-suretek/plinko-app/master/ball.png';
+		this.image.src = 'Resources/ball-small.png';
 	},
 	
 	draw: function(ctx) {
@@ -620,54 +586,40 @@ Qlinqo.StatusGamePiece = Stratiscape.DrawnObject.extend({ //shows how many balls
 Qlinqo.Peg = Stratiscape.DrawnObject.extend({ //peg/knob drawn object class
 
 	init: function(x, y, width, height) {
-		// this.x = x * Qlinqo.scale;
-		// this.y = y * Qlinqo.scale;
-		// this.width = width * Qlinqo.scale;
-		// this.height = height * Qlinqo.scale;
-		// this.highlighted = false;
-		// this.color = Qlinqo.defaultFillColor;
-
 		this.x = x * Qlinqo.scale;
 		this.y = y * Qlinqo.scale;
-		this.width = 6;
-		this.height = 6;
-		this.wRadius = this.width/2;
-		this.hRadius = this.height/2;
-		
-		this.imageLoaded = false;
-		var my = this;
-		this.image = new Image();
-		this.image.onload = function() {
-				my.imageLoaded = true;
-			};
-// 		this.image.src = 'Resources/stake.png';
-      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/stake.png';
+		this.width = width * Qlinqo.scale;
+		this.height = height * Qlinqo.scale;
+		this.highlighted = false;
+		this.color = Qlinqo.defaultFillColor;
 	},
 	
-	// fade: function() {
-	// 	if(!this.color.equals(Qlinqo.defaultFillColor))	{
-	// 		this.color.fadeTo(Qlinqo.defaultFillColor);
-	// 		this.layer.needsDisplay = true;
-	// 	}
-	// },
+	fade: function() {
+		if(!this.color.equals(Qlinqo.defaultFillColor))	{
+			this.color.fadeTo(Qlinqo.defaultFillColor);
+			this.layer.needsDisplay = true;
+		}
+	},
 	
-	// highlight: function(highlighted, color) {
-	// 	this.highlighted = highlighted;
-	// 	this.color = color;
-	// 	this.layer.needsDisplay = true;
-	// },
+	highlight: function(highlighted, color) {
+		this.highlighted = highlighted;
+		this.color = color;
+		this.layer.needsDisplay = true;
+	},
 	
 	draw: function(ctx) {
-		if(this.imageLoaded) {
-			ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
-		} else {
-			var my = this;
-			setTimeout(function() {my.draw(ctx);}, 20);
-		}
+	
+		ctx.strokeStyle = this.color.multiply(0.5).toString();
+		ctx.fillStyle = this.color.toString();
+		ctx.lineWidth = 1;
+		ctx.beginPath();
+		ctx.arc(this.x,this.y,this.width/2,0,Math.PI*2,true);
+		ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
 	}
 	
 });
-
 
 Qlinqo.Rect = Stratiscape.DrawnObject.extend({ //rectangle drawn object class
 
@@ -751,7 +703,7 @@ Qlinqo.PointValueText = Stratiscape.DrawnObject.extend({ //PointValueText drawn 
 	
 	draw: function(ctx) {
 	
-		ctx.fillStyle = 'rgba(0,0,0,0)';
+		ctx.fillStyle = '#FFF';
 		ctx.strokeStyle = '#EEE'
 		ctx.font = "bolder 20px Trebuchet MS,Tahoma,Verdana,Arial,sans-serif";
 		ctx.textAlign = "center";
@@ -787,7 +739,7 @@ Qlinqo.AnimatedFadeOutText = Stratiscape.DrawnObject.extend({ //Fade out text gr
 	
 	draw: function(ctx) {
 	
-		ctx.fillStyle = '#a8216b';
+		ctx.fillStyle = '#FF0';
 		ctx.strokeStyle = '#EEE'
 		ctx.font = "bolder " + this.size + "px Trebuchet MS,Tahoma,Verdana,Arial,sans-serif";
 		ctx.textAlign = "center";
@@ -815,7 +767,7 @@ Qlinqo.NeonText = Stratiscape.DrawnObject.extend({ //Text with a Neon glow drawn
 			blurHexColor = "#ff00de";
 		//http://www.html5rocks.com/en/tutorials/canvas/texteffects/#toc-text-shadow-clipping
 		this.shadow = "0 0 10px "+textHexColor+", 0 0 20px "+textHexColor+", 0 0 30px "+textHexColor+", 0 0 40px , 0 0 70px "+blurHexColor+", 0 0 80px "+blurHexColor+", 0 0 100px "+blurHexColor+", 0 0 150px "+blurHexColor;
-		this.background = "rgba(0,0,0,0)";
+		this.background = "#000";
 		this.color = textHexColor;
 		this.align = "center";
 		if(align !== null && typeof align != "undefined")
@@ -824,54 +776,54 @@ Qlinqo.NeonText = Stratiscape.DrawnObject.extend({ //Text with a Neon glow drawn
 		}
 	},
 	
-	// draw: function(ctx) {
+	draw: function(ctx) {
 	
-	// 	var text = this.text;
+		var text = this.text;
 		
-	// 	ctx.font = "bolder " + this.size + "px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif";
-	// 	ctx.textAlign = "left";
-	// 	ctx.textBaseline = 'middle';
-	// 	var textHeight = this.size * 3.5;
-	// 	var textTop = textHeight/2;
+		ctx.font = "bolder " + this.size + "px 'Lucida Sans Unicode', 'Lucida Grande', sans-serif";
+		ctx.textAlign = "left";
+		ctx.textBaseline = 'middle';
+		var textHeight = this.size * 3.5;
+		var textTop = textHeight/2;
 		
-	// 	var width = ctx.measureText(text).width;
-	// 	var xOffset = -width/2;
-	// 	if(this.align == "left")
-	// 		xOffset = 0;
-	// 	else if(this.align == "right")
-	// 		xOffset = -width;
-	// 	// add a background to the current effect
-	// 	ctx.fillStyle = this.background;
-	// 	ctx.fillRect(this.x + xOffset, this.y, width, textHeight - 1)
-	// 	// parse text-shadows from css
-	// 	var shadows = Qlinqo.Util.parseShadow(this.shadow);
-	// 	// loop through the shadow collection
-	// 	var n = shadows.length; while(n--) {
-	// 		var shadow = shadows[n];
-	// 		var totalWidth = width + shadow.blur * 2;
-	// 		ctx.save();
-	// 		ctx.beginPath();
-	// 		ctx.rect(this.x + xOffset - shadow.blur, this.y, this.x + xOffset + totalWidth, textHeight);
-	// 		ctx.clip();
-	// 		if (shadow.blur) { // just run shadow (clip text)
-	// 			ctx.shadowColor = shadow.color;
-	// 			ctx.shadowOffsetX = shadow.x + totalWidth;
-	// 			ctx.shadowOffsetY = shadow.y;
-	// 			ctx.shadowBlur = shadow.blur;
-	// 			ctx.fillText(text, -totalWidth + this.x + xOffset, this.y + textTop);
-	// 		} else { // just run pseudo-shadow
-	// 			ctx.fillStyle = shadow.color;
-	// 			ctx.fillText(text, this.x + xOffset + (shadow.x||0), this.y - (shadow.y||0) + textTop);
-	// 		}
-	// 		ctx.restore();
-	// 	}
-	// 	// drawing the text in the foreground
-	// 	if (this.color) {
-	// 		ctx.fillStyle = this.color;
-	// 		ctx.fillText(text, this.x + xOffset, this.y + textTop);
-	// 	}
+		var width = ctx.measureText(text).width;
+		var xOffset = -width/2;
+		if(this.align == "left")
+			xOffset = 0;
+		else if(this.align == "right")
+			xOffset = -width;
+		// add a background to the current effect
+		ctx.fillStyle = this.background;
+		ctx.fillRect(this.x + xOffset, this.y, width, textHeight - 1)
+		// parse text-shadows from css
+		var shadows = Qlinqo.Util.parseShadow(this.shadow);
+		// loop through the shadow collection
+		var n = shadows.length; while(n--) {
+			var shadow = shadows[n];
+			var totalWidth = width + shadow.blur * 2;
+			ctx.save();
+			ctx.beginPath();
+			ctx.rect(this.x + xOffset - shadow.blur, this.y, this.x + xOffset + totalWidth, textHeight);
+			ctx.clip();
+			if (shadow.blur) { // just run shadow (clip text)
+				ctx.shadowColor = shadow.color;
+				ctx.shadowOffsetX = shadow.x + totalWidth;
+				ctx.shadowOffsetY = shadow.y;
+				ctx.shadowBlur = shadow.blur;
+				ctx.fillText(text, -totalWidth + this.x + xOffset, this.y + textTop);
+			} else { // just run pseudo-shadow
+				ctx.fillStyle = shadow.color;
+				ctx.fillText(text, this.x + xOffset + (shadow.x||0), this.y - (shadow.y||0) + textTop);
+			}
+			ctx.restore();
+		}
+		// drawing the text in the foreground
+		if (this.color) {
+			ctx.fillStyle = this.color;
+			ctx.fillText(text, this.x + xOffset, this.y + textTop);
+		}
 		
-	// }
+	}
 	
 });
 
@@ -1042,4 +994,3 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
-//ended
