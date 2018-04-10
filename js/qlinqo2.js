@@ -345,7 +345,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 Qlinqo.newGamePiece = function(x, y) {
 
 	if(Qlinqo.ballsLeft > 0)
-	{
+	{https://rawgit.com/sumit-suretek/plinko-app/master/js/qlinqo2.js
 		var fixDef = new Box2D.Dynamics.b2FixtureDef;
 		
 		var bodyDef = new Box2D.Dynamics.b2BodyDef;
@@ -386,7 +386,7 @@ Qlinqo.newGamePiece = function(x, y) {
 	}
 };
 
-Qlinqo.fadePegs = function() {
+Qlinqo.fadePegs = function() {https://rawgit.com/sumit-suretek/plinko-app/master/js/qlinqo2.js
 	for(var i in Qlinqo.pegs)
 	{
 		Qlinqo.pegs[i].fade();
@@ -403,7 +403,7 @@ Qlinqo.startOver = function() {
 	Qlinqo.pointTextObject.text = 0;
 	//setup our status object for current points and balls left
 	for(var i = Qlinqo.ballsLeft - 1; i >= 0; i--)
-	{
+	{https://rawgit.com/sumit-suretek/plinko-app/master/js/qlinqo2.js
 		Qlinqo.statusLayer.addChild(new Qlinqo.StatusGamePiece(12 + i * 12, 12));
 	}
 };
@@ -421,7 +421,7 @@ Qlinqo.update = function() {
 			Qlinqo.world.DestroyBody(gamePiece.body);
 			Qlinqo.gamePieces.splice(i, 1);
 			gamePiece.layer.removeChild(gamePiece);
-			
+			https://rawgit.com/sumit-suretek/plinko-app/master/js/qlinqo2.js
 			Qlinqo.ballsScored++;
 			//check for end of game
 			if(Qlinqo.ballsScored == 5) {
@@ -456,10 +456,10 @@ Qlinqo.update = function() {
 			}
 		}
 	}
-
+		///some code here
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		Qlinqo.foregroundLayer.children[i].update();
+		     Qlinqo.foregroundLayer.children[i].update();
 	}
 
 	Qlinqo.world.Step(
