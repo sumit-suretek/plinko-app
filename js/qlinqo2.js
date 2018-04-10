@@ -490,7 +490,9 @@ Qlinqo.update = function() {
 
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		Qlinqo.foregroundLayer.children[i].update();
+		console.log(Qlinqo.foregroundLayer.children[i]);
+		return;
+		//Qlinqo.foregroundLayer.children[i].update();
 	} 
 		//updated
 	Qlinqo.world.Step(
