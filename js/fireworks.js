@@ -171,9 +171,9 @@ FW.Particle = Stratiscape.DrawnObject.extend({ //particle class
 	
 	draw: function(ctx) {
 		//UNCOMMENT
-		ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
-		
-		ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		    ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		      ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		//UNCOMMENT
 	}
 	
 });
