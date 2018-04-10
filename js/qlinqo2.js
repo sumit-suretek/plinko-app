@@ -487,11 +487,9 @@ Qlinqo.update = function() {
 
 		}
 	}
-
+console.log(Qlinqo.foregroundLayer.children);
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		console.log(Qlinqo.foregroundLayer.children[i]);
-		return;
 		//Qlinqo.foregroundLayer.children[i].update();
 	} 
 		//updated
