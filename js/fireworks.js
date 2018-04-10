@@ -1,6 +1,5 @@
 //fireworks.js from qlinqo
 
-
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
@@ -168,11 +167,11 @@ FW.Particle = Stratiscape.DrawnObject.extend({ //particle class
 		if(this.velocity <= 0)
 			this.layer.removeChild(this);
 	},
-	
 	draw: function(ctx) {
 		//UNCOMMENT
 		    ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
-		      ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		console.log('D');
+			ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
 		//UNCOMMENT
 	}
 	
