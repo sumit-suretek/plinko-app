@@ -488,10 +488,10 @@ Qlinqo.update = function() {
 		}
 	}
 		//	error start
-// 	for(var i in Qlinqo.foregroundLayer.children)
-// 	{
-// 		Qlinqo.foregroundLayer.children[i].update();
-// 	} 
+	for(var i in Qlinqo.foregroundLayer.children)
+	{
+		Qlinqo.foregroundLayer.children[i];
+	} 
 		//uncomment
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
