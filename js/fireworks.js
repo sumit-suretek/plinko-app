@@ -90,10 +90,10 @@ var FW = {
         console.log('Outside Loop:'+FW);
             //console.log('Inside loop:'+FW);	
 		//	error start
-		for(var i in FW.foregroundLayer.children)
-		{
-			FW.foregroundLayer.children[i].update();
-		}
+// 		for(var i in FW.foregroundLayer.children)
+// 		{
+// 			FW.foregroundLayer.children[i].update();
+// 		}
 		//	uncomment 	
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
 	},
