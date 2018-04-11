@@ -490,7 +490,7 @@ Qlinqo.update = function() {
 		//	error start
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		Qlinqo.foregroundLayer.children[i].update();
+		Qlinqo.update();
 	} 
 		//uncomment
 	Qlinqo.world.Step(
