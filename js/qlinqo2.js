@@ -489,7 +489,7 @@ Qlinqo.update = function() {
 	}
 		//	error start
 		console.log(Qlinqo.foregroundLayer.children);
-		console.log('br');
+		console.log('OUtside loop : QLINQO');
 // 	for(var i in Qlinqo.foregroundLayer.children)
 // 	{
 // 		Qlinqo.foregroundLayer.children[i].update();
