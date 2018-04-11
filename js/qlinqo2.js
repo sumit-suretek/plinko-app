@@ -488,7 +488,8 @@ Qlinqo.update = function() {
 		}
 	}
 		//	error start
-		//console.log(Qlinqo.foregroundLayer.children);
+		console.log(Qlinqo.foregroundLayer.children);
+		console.log('br');
 // 	for(var i in Qlinqo.foregroundLayer.children)
 // 	{
 // 		Qlinqo.foregroundLayer.children[i].update();
