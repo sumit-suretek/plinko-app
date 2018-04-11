@@ -10,6 +10,9 @@ var FW = {
 	'RandomBlastingLevel':0,
 	
 	Setup: function(foregroundLayer){
+			console.log(foregroundLayer);
+			console.log('break');
+			return;
 		FW.foregroundLayer=foregroundLayer;
 		
 		
@@ -88,7 +91,7 @@ var FW = {
 		//	error start
 		for(var i in FW.foregroundLayer.children)
 		{
-			FW.foregroundLayer.children[i].update();
+			//FW.foregroundLayer.children[i].update();
 		}
 		//	uncomment 	
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
