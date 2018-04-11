@@ -88,9 +88,10 @@ var FW = {
 	Update: function() {
 
 		//	error start
+		console.log(foregroundLayer);
 		for(var i in FW.foregroundLayer.children)
 		{
-			console.log(foregroundLayer);
+			
 			//FW.foregroundLayer.children[i].update();
 		}
 		//	uncomment 	
