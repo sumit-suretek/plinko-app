@@ -88,7 +88,7 @@ var FW = {
 	Update: function() {
 
 		//	error start
-		//console.log('Outside Loop:');
+		console.log('Outside Loop:');
 		for(var i in FW.foregroundLayer.children)
 		{
 			console.log('Inside loop:'+FW);
