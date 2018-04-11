@@ -86,8 +86,6 @@ var FW = {
 	
 	Update: function() {
 
-		console.log(FW.foregroundLayer);
-		console.log('break');
 		//	error start
 		for(var i in FW.foregroundLayer.children)
 		{
