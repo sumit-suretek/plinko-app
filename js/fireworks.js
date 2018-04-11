@@ -10,6 +10,7 @@ var FW = {
 	'RandomBlastingLevel':0,
 	
 	Setup: function(foregroundLayer){
+		console.log(foregroundLayer);
 		FW.foregroundLayer=foregroundLayer;
 		
 		
