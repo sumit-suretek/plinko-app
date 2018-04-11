@@ -88,12 +88,13 @@ var FW = {
 	Update: function() {
 
 		//	error start
-		console.log('Outside Loop:');
-		for(var i in FW.foregroundLayer.children)
-		{
-			console.log('Inside loop:'+FW);
-			//FW.foregroundLayer.children[i].update();
-		}
+		console.log(FW.foregroundLayer);
+		console.log('Outside Loop:FW');
+			//console.log('Inside loop:'+FW);
+// 		for(var i in FW.foregroundLayer.children)
+// 		{
+// 			FW.foregroundLayer.children[i].update();
+// 		}
 		//	uncomment 	
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
 	},
