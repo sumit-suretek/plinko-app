@@ -1,6 +1,3 @@
-//sdfsdfsd
-//sdfsdfsdf
-//fsdfsdfsdf
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
@@ -13,7 +10,6 @@ var FW = {
 	'RandomBlastingLevel':0,
 	
 	Setup: function(foregroundLayer){
-		
 		FW.foregroundLayer=foregroundLayer;
 		
 		
@@ -37,7 +33,7 @@ var FW = {
 		}
 		document.getElementById('debugData').innerHTML = st;
 		*/
-		//uncomment
+		
 		FW.imageOrig = foregroundLayer.ctx.createImageData(16, 16);
 		for (var i = 0; i < FW.imageData.length; i+=4)
 		{
@@ -89,15 +85,12 @@ var FW = {
 	},
 	
 	Update: function() {
-		     // console.log(FW.foregroundLayer);
-        //console.log('Outside Loop:'+FW);
-            //console.log('Inside loop:'+FW);	
-		//	error start
+	
 		for(var i in FW.foregroundLayer.children)
 		{
- 			FW.foregroundLayer.children[i].update();
+			FW.foregroundLayer.children[i].update();
 		}
-		//	uncomment 	
+		
 		FW.foregroundLayer.needsDisplay = true;//set dirty flag
 	},
 	
@@ -174,7 +167,7 @@ FW.Particle = Stratiscape.DrawnObject.extend({ //particle class
 	},
 	
 	draw: function(ctx) {
-		ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
+		//ctx.putImageData(this.image, this.x - this.wRadius, this.y - this.hRadius);
 		ctx.drawImage(this.image, this.x - this.wRadius, this.y - this.hRadius);
 	}
 	
@@ -254,4 +247,5 @@ FW.Util.ChangeImageColor = function(/*Image bitmap array*/ bmpArr, /*ColorRGBA*/
 	
 	return retBmpArr;
 };
-//ended
+
+//old fireworks.js
