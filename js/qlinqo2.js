@@ -1,4 +1,3 @@
-//qlinqo             ghhfhf
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -212,7 +211,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	var pegCount = 6;
 	var padding = 2;
 	var scaledPadding = padding * Qlinqo.scale;
-	var xDist = (Qlinqo.width/Qlinqo.scale - padding)/(pegCount - 1);//1.1;//(radiusDisk * 2.5);[i]
+	var xDist = (Qlinqo.width/Qlinqo.scale - padding)/(pegCount - 1);//1.1;//(radiusDisk * 2.5);
 	var yDist = xDist * Math.sqrt(2.5)/2.0;
 	var rows = ((Qlinqo.height - scaledPadding)/Qlinqo.scale) / xDist;
 	var cols = Math.floor(((Qlinqo.width - scaledPadding)/Qlinqo.scale) / yDist);
@@ -488,12 +487,12 @@ Qlinqo.update = function() {
 
 		}
 	}
-		//	error start
+
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
 		Qlinqo.foregroundLayer.children[i].update();
-	} 
-		//uncomment
+	}
+
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
 	,  10       //velocity iterations
@@ -602,8 +601,7 @@ Qlinqo.StatusGamePiece = Stratiscape.DrawnObject.extend({ //shows how many balls
 				my.imageLoaded = true;
 			};
 // 		this.image.src = 'Resources/ball-small.png';
-//      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
-		this.image.src = 'https://raw.githubusercontent.com/sumit-suretek/plinko-app/master/ball.png';
+      	this.image.src = 'https://rawgit.com/sumit-suretek/plinko-app/master/ball.png';
 	},
 	
 	draw: function(ctx) {
@@ -1042,4 +1040,5 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
-//ended
+
+//old qlinqo2.js
