@@ -433,7 +433,7 @@ Qlinqo.update = function() {
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
-console.log('436 log stop here script');
+console.log('436 STOPhere script');
 console.log('copypaste');
 console.log(playfieldLayer);
 console.log('1');
