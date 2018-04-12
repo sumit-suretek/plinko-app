@@ -428,7 +428,7 @@ Qlinqo.startOver = function() {
 
 Qlinqo.update = function() {
 
-	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
+	//document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 
 console.log('FDDD STOP DSFSD');
 console.log('KDFJDGJHFKDJ');
