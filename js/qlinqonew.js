@@ -45,6 +45,19 @@ var Qlinqo = {'foregroundLayer':null
 
 Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
 
+			console.log(playfieldLayer);
+			console.log('1');
+			console.log(foregroundLayer);
+			console.log('2');
+			console.log(backgroundLayer);
+			console.log('3');
+			console.log(debugLayer);
+			console.log('4');
+			console.log(statusLayer);
+			console.log('5');
+			console.log(gameOverLayer);
+			return;	
+	
 	//setup sound effects
 	
 // 	Qlinqo.SfxInterface = new SfxInterface(['Resources/beep1.wav'
