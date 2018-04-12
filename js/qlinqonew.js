@@ -433,8 +433,7 @@ Qlinqo.update = function() {
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
-console.log('436 STOPhere script');
-console.log('copypaste');
+console.log('436 STOP here script');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
@@ -447,6 +446,7 @@ console.log(statusLayer);
 console.log('5');
 console.log(gameOverLayer);
 console.log(Qlinqo.ballsScored);
+console.log('copypaste');
 return;
 		var gamePiece = Qlinqo.gamePieces[i];
 		if(!gamePiece.body.IsAwake() && gamePiece.scored)
