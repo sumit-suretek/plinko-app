@@ -423,7 +423,8 @@ Qlinqo.startOver = function() {
 	}
 };
 
-console.log('426      log stop here script');
+console.log('426 log stop here script');
+console.log('copypaste');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
@@ -436,6 +437,8 @@ console.log(statusLayer);
 console.log('5');
 console.log(gameOverLayer);
 return;	
+
+
 Qlinqo.update = function() {
 
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
