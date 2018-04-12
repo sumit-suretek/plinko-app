@@ -423,7 +423,7 @@ Qlinqo.startOver = function() {
 	}
 };
 
-console.log('426 log stop here script');
+console.log('426      log stop here script');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
