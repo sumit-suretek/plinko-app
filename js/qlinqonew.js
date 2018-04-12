@@ -44,20 +44,6 @@ var Qlinqo = {'foregroundLayer':null
 			, 'ballsScored':0};
 
 Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
-		console.log('stop');return;
-	
-			console.log(playfieldLayer);
-			console.log('1');
-			console.log(foregroundLayer);
-			console.log('2');
-			console.log(backgroundLayer);
-			console.log('3');
-			console.log(debugLayer);
-			console.log('4');
-			console.log(statusLayer);
-			console.log('5');
-			console.log(gameOverLayer);
-			return;	
 	
 	//setup sound effects
 	
@@ -118,7 +104,20 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.foregroundLayer = foregroundLayer;
 	Qlinqo.statusLayer = statusLayer;
 	Qlinqo.gameOverLayer = gameOverLayer;
-	
+console.log('stop');
+console.log(playfieldLayer);
+console.log('1');
+console.log(foregroundLayer);
+console.log('2');
+console.log(backgroundLayer);
+console.log('3');
+console.log(debugLayer);
+console.log('4');
+console.log(statusLayer);
+console.log('5');
+console.log(gameOverLayer);
+return;	
+
 	//Setup our Current Points drawn object
 	Qlinqo.pointTextObject = new Qlinqo.NeonText(scaledWidth - 0.2, -0.7, 0, 30, "right", "#782970");
 	backgroundLayer.addChild(Qlinqo.pointTextObject);
