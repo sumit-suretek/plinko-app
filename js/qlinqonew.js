@@ -433,15 +433,7 @@ Qlinqo.update = function() {
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
-		var gamePiece = Qlinqo.gamePieces[i];
-		if(!gamePiece.body.IsAwake() && gamePiece.scored)
-		{
-			Qlinqo.world.DestroyBody(gamePiece.body);
-			Qlinqo.gamePieces.splice(i, 1);
-			gamePiece.layer.removeChild(gamePiece);
-			
-			Qlinqo.ballsScored++;
-console.log('476 log stop here script');
+console.log('436 log stop here script');
 console.log('copypaste');
 console.log(playfieldLayer);
 console.log('1');
@@ -456,6 +448,14 @@ console.log('5');
 console.log(gameOverLayer);
 console.log(Qlinqo.ballsScored);
 return;
+		var gamePiece = Qlinqo.gamePieces[i];
+		if(!gamePiece.body.IsAwake() && gamePiece.scored)
+		{
+			Qlinqo.world.DestroyBody(gamePiece.body);
+			Qlinqo.gamePieces.splice(i, 1);
+			gamePiece.layer.removeChild(gamePiece);
+			
+			Qlinqo.ballsScored++;
 
 			//check for end of game
 			if(Qlinqo.ballsScored == 5) {
