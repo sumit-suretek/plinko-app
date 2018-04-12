@@ -260,19 +260,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	}
 	
 		
-console.log('stop here');
-console.log(playfieldLayer);
-console.log('1');
-console.log(foregroundLayer);
-console.log('2');
-console.log(backgroundLayer);
-console.log('3');
-console.log(debugLayer);
-console.log('4');
-console.log(statusLayer);
-console.log('5');
-console.log(gameOverLayer);
-return;	
+
 	//create the clinko knobs
 	fixDef.density = 2.0;
 	fixDef.friction = 0.01;
@@ -343,7 +331,19 @@ return;
 		//add the text for the slot point value
 		backgroundLayer.addChild(new Qlinqo.PointValueText(0.45 + (col * xDist), groundTop + 0, pointValues[col])); 
 	}
-
+console.log('stop here');
+console.log(playfieldLayer);
+console.log('1');
+console.log(foregroundLayer);
+console.log('2');
+console.log(backgroundLayer);
+console.log('3');
+console.log(debugLayer);
+console.log('4');
+console.log(statusLayer);
+console.log('5');
+console.log(gameOverLayer);
+return;	
 	//setup debug draw
 	if(Qlinqo.drawDebugData)
 	{
