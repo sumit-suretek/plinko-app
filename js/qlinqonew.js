@@ -430,7 +430,8 @@ Qlinqo.update = function() {
 
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
-console.log('433 STOP here script');
+
+console.log('LINE NO 434');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
