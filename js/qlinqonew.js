@@ -44,7 +44,8 @@ var Qlinqo = {'foregroundLayer':null
 			, 'ballsScored':0};
 
 Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
-
+		console.log('stop');return;
+	
 			console.log(playfieldLayer);
 			console.log('1');
 			console.log(foregroundLayer);
