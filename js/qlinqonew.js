@@ -104,6 +104,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.foregroundLayer = foregroundLayer;
 	Qlinqo.statusLayer = statusLayer;
 	Qlinqo.gameOverLayer = gameOverLayer;
+
 console.log('stop');
 console.log(playfieldLayer);
 console.log('1');
