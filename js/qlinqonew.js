@@ -427,20 +427,7 @@ Qlinqo.startOver = function() {
 
 
 Qlinqo.update = function() {
-console.log('426 log stop here script');
-console.log('copypaste');
-console.log(playfieldLayer);
-console.log('1');
-console.log(foregroundLayer);
-console.log('2');
-console.log(backgroundLayer);
-console.log('3');
-console.log(debugLayer);
-console.log('4');
-console.log(statusLayer);
-console.log('5');
-console.log(gameOverLayer);
-return;
+
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 
 	//look for sleeping gamePieces to remove
@@ -485,6 +472,22 @@ return;
 			
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
+			
+console.log('476 log stop here script');
+console.log('copypaste');
+console.log(playfieldLayer);
+console.log('1');
+console.log(foregroundLayer);
+console.log('2');
+console.log(backgroundLayer);
+console.log('3');
+console.log(debugLayer);
+console.log('4');
+console.log(statusLayer);
+console.log('5');
+console.log(gameOverLayer);
+return;
+			
       form = $('#frmplinko');
       document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
 			if(Qlinqo.currentPlayerPoints == "0"){
