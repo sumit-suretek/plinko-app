@@ -351,10 +351,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
 };
-	console.log('aaa');
 Qlinqo.newGamePiece = function(x, y) {
-	console.log(Qlinqo.ballsLeft);
-	return;
 	if(Qlinqo.ballsLeft > 0)
 	{
 		var fixDef = new Box2D.Dynamics.b2FixtureDef;
@@ -376,7 +373,6 @@ Qlinqo.newGamePiece = function(x, y) {
 		bodyDef.position.y = y/Qlinqo.scale;
 		var diskBody = Qlinqo.world.CreateBody(bodyDef);
 		var gamePiece = new Qlinqo.GamePiece(diskBody, Qlinqo.radiusDisk * 2, Qlinqo.radiusDisk * 2);
-		console.log(gamePiece);return;
 		gamePiece.body = diskBody;//setup backreference so we can remove the body when the game piece is removed
 		Qlinqo.gamePieces.push(gamePiece);
 		diskBody.SetUserData(gamePiece);
