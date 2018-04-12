@@ -331,7 +331,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 		//add the text for the slot point value
 		backgroundLayer.addChild(new Qlinqo.PointValueText(0.45 + (col * xDist), groundTop + 0, pointValues[col])); 
 	}
-console.log('stop here');
+console.log('stop here script');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
