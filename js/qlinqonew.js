@@ -331,19 +331,7 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 		//add the text for the slot point value
 		backgroundLayer.addChild(new Qlinqo.PointValueText(0.45 + (col * xDist), groundTop + 0, pointValues[col])); 
 	}
-console.log('stop here script');
-console.log(playfieldLayer);
-console.log('1');
-console.log(foregroundLayer);
-console.log('2');
-console.log(backgroundLayer);
-console.log('3');
-console.log(debugLayer);
-console.log('4');
-console.log(statusLayer);
-console.log('5');
-console.log(gameOverLayer);
-return;	
+
 	//setup debug draw
 	if(Qlinqo.drawDebugData)
 	{
@@ -504,7 +492,19 @@ Qlinqo.update = function() {
 
 		}
 	}
-
+console.log('stop here script');
+console.log(playfieldLayer);
+console.log('1');
+console.log(foregroundLayer);
+console.log('2');
+console.log(backgroundLayer);
+console.log('3');
+console.log(debugLayer);
+console.log('4');
+console.log(statusLayer);
+console.log('5');
+console.log(gameOverLayer);
+return;	
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
 		Qlinqo.foregroundLayer.children[i].update();
