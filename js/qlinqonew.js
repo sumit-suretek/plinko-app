@@ -428,11 +428,8 @@ Qlinqo.startOver = function() {
 
 Qlinqo.update = function() {
 
-console.log('FDDD STOP DSFSD');
-	//document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
-console.log('KDFJDGJHFKDJ');
-return;
 	
+	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
