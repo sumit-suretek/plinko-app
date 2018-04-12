@@ -445,6 +445,8 @@ console.log(gameOverLayer);
 console.log(Qlinqo.ballsScored);
 console.log('copypaste');
 return;
+	
+	
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
