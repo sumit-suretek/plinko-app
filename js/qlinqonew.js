@@ -436,6 +436,7 @@ Qlinqo.update = function() {
 	console.log(Qlinqo.gamePieces.length);
 	console.log('sss');
 	//look for sleeping gamePieces to remove
+	//updated
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
 
