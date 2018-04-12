@@ -441,6 +441,22 @@ Qlinqo.update = function() {
 			gamePiece.layer.removeChild(gamePiece);
 			
 			Qlinqo.ballsScored++;
+console.log('476 log stop here script');
+console.log('copypaste');
+console.log(playfieldLayer);
+console.log('1');
+console.log(foregroundLayer);
+console.log('2');
+console.log(backgroundLayer);
+console.log('3');
+console.log(debugLayer);
+console.log('4');
+console.log(statusLayer);
+console.log('5');
+console.log(gameOverLayer);
+console.log(Qlinqo.ballsScored);
+return;
+
 			//check for end of game
 			if(Qlinqo.ballsScored == 5) {
 				//start fireworks if we had enough points
@@ -473,20 +489,7 @@ Qlinqo.update = function() {
 				Qlinqo.gameOverLayer.addChild(new Qlinqo.GameOverScreen(pointMsg));
 			}
 			
-console.log('476 log stop here script');
-console.log('copypaste');
-console.log(playfieldLayer);
-console.log('1');
-console.log(foregroundLayer);
-console.log('2');
-console.log(backgroundLayer);
-console.log('3');
-console.log(debugLayer);
-console.log('4');
-console.log(statusLayer);
-console.log('5');
-console.log(gameOverLayer);
-return;
+
 			
       form = $('#frmplinko');
       document.getElementById("sessdata").value = AESencryption(Qlinqo.currentPlayerPoints);    
