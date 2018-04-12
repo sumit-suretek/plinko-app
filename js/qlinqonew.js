@@ -423,6 +423,10 @@ Qlinqo.startOver = function() {
 	}
 };
 
+	
+
+
+Qlinqo.update = function() {
 console.log('426 log stop here script');
 console.log('copypaste');
 console.log(playfieldLayer);
@@ -436,11 +440,7 @@ console.log('4');
 console.log(statusLayer);
 console.log('5');
 console.log(gameOverLayer);
-return;	
-
-
-Qlinqo.update = function() {
-
+return;
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 
 	//look for sleeping gamePieces to remove
