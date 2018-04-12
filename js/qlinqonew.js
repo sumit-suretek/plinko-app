@@ -431,7 +431,7 @@ Qlinqo.update = function() {
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 
-console.log('STOP');
+console.log('FDDD STOP DSFSD');
 return;
 	
 	
