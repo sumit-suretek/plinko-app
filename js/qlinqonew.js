@@ -433,7 +433,7 @@ Qlinqo.update = function() {
 	console.log(Qlinqo.gamePieces.length);
 	console.log('sss');
 	//look for sleeping gamePieces to remove
-	for(var i = Qlinqo.gamePieces.length + 1; i >= 2; i++)
+	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
 
 		var gamePiece = Qlinqo.gamePieces[i];
@@ -446,7 +446,7 @@ Qlinqo.update = function() {
 			Qlinqo.ballsScored++;
 
 			//check for end of game
-			if(Qlinqo.ballsScored == 5) {
+			if(Qlinqo.ballsScored == 1) {
 				//start fireworks if we had enough points
 				var pointMsg = "Try Again!";
 				var fwLength = Qlinqo.currentPlayerPoints / 5000;
