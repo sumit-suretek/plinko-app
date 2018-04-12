@@ -404,7 +404,7 @@ Qlinqo.newGamePiece = function(x, y) {
 // };
 
 
-console.log('421 log stop here script');
+console.log('407 log stop here script');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
