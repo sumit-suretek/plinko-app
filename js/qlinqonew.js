@@ -492,7 +492,7 @@ Qlinqo.update = function() {
 
 		}
 	}
-console.log('stop here script');
+console.log('log stop here script');
 console.log(playfieldLayer);
 console.log('1');
 console.log(foregroundLayer);
