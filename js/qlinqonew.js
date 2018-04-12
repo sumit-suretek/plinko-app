@@ -431,20 +431,7 @@ Qlinqo.update = function() {
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
 	
 
-console.log('LINE NO 434');
-console.log(playfieldLayer);
-console.log('1');
-console.log(foregroundLayer);
-console.log('2');
-console.log(backgroundLayer);
-console.log('3');
-console.log(debugLayer);
-console.log('4');
-console.log(statusLayer);
-console.log('5');
-console.log(gameOverLayer);
-console.log(Qlinqo.ballsScored);
-console.log('copypaste');
+console.log('STOP');
 return;
 	
 	
