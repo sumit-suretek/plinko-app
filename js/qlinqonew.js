@@ -430,7 +430,8 @@ Qlinqo.update = function() {
 
 	
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
-	
+	console.log(Qlinqo.gamePieces.length);
+	console.log('sss');
 	//look for sleeping gamePieces to remove
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
 	{
