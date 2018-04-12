@@ -40,7 +40,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'addStats': false
 			, 'pointTextObject': null
 			, 'currentPlayerPoints': 0
-			, 'ballsLeft': 5
+			, 'ballsLeft': 1
 			, 'ballsScored':0};
 
 Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
@@ -351,9 +351,10 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	
 	window.setInterval(Qlinqo.fadePegs, 100);
 };
-
+	console.log('aaa');
 Qlinqo.newGamePiece = function(x, y) {
-
+	console.log(Qlinqo.ballsLeft);
+	return;
 	if(Qlinqo.ballsLeft > 0)
 	{
 		var fixDef = new Box2D.Dynamics.b2FixtureDef;
