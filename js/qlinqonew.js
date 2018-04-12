@@ -375,6 +375,7 @@ Qlinqo.newGamePiece = function(x, y) {
 		bodyDef.position.y = y/Qlinqo.scale;
 		var diskBody = Qlinqo.world.CreateBody(bodyDef);
 		var gamePiece = new Qlinqo.GamePiece(diskBody, Qlinqo.radiusDisk * 2, Qlinqo.radiusDisk * 2);
+		console.log(gamePiece);return;
 		gamePiece.body = diskBody;//setup backreference so we can remove the body when the game piece is removed
 		Qlinqo.gamePieces.push(gamePiece);
 		diskBody.SetUserData(gamePiece);
@@ -433,8 +434,8 @@ Qlinqo.update = function() {
 
 	
 	document.requestAnimFrameId = requestAnimFrame(Qlinqo.update);
-	console.log(Qlinqo.gamePieces.length);
-	console.log('sss');
+// 	console.log(Qlinqo.gamePieces.length);
+// 	console.log('sss');
 	//look for sleeping gamePieces to remove
 	//updated
 	for(var i = Qlinqo.gamePieces.length - 1; i >= 0; i--)
