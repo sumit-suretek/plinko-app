@@ -388,7 +388,10 @@ Qlinqo.newGamePiece = function(x, y) {
 		for(var i in Qlinqo.statusLayer.children)
 		{
 			if(Qlinqo.statusLayer.children[i] instanceof Qlinqo.StatusGamePiece)
-			{
+			{		for(var i in FW.foregroundLayer.children)
+// 		{
+// 			FW.foregroundLayer.children[i].update();
+// 		}
 				Qlinqo.statusLayer.removeChild(Qlinqo.statusLayer.children[i]);
 				break;
 			}
