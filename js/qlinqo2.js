@@ -1044,7 +1044,7 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
-
+return Qlinqo;
 })(window);
 	
 //old qlinqo2.js file
