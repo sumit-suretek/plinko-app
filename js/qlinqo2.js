@@ -377,7 +377,7 @@ Qlinqo.newGamePiece = function(x, y) {
 		diskBody.SetUserData(gamePiece);
 		console.log('before: ' + Qlinqo.foregroundLayer.children);
 		Qlinqo.foregroundLayer.addChild(gamePiece);
-		console.log('after: ' + Qlinqo.foregroundLayer.children);
+		console.log('after: ' + typeof(Qlinqo.foregroundLayer.children[0]));
 		diskBody.CreateFixture(fixDef);
 
 		Qlinqo.ballsLeft--;
