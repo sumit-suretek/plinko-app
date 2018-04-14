@@ -1,3 +1,8 @@
+//Updated 10:20AM
+
+(function(){
+// Js begins
+
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -1043,4 +1048,10 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		return ret;
 	};
 
+// Js Ends
+})();
+
+
+	
+	
 //old qlinqo2.js file
