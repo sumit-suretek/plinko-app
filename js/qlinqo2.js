@@ -1,4 +1,4 @@
-var Plinko = (function(exports){
+var Plinko = (function(window){
 
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
