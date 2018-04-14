@@ -375,9 +375,9 @@ Qlinqo.newGamePiece = function(x, y) {
 		gamePiece.body = diskBody;//setup backreference so we can remove the body when the game piece is removed
 		Qlinqo.gamePieces.push(gamePiece);
 		diskBody.SetUserData(gamePiece);
-		
+		console.log('before: ' + Qlinqo.foregroundLayer.children);
 		Qlinqo.foregroundLayer.addChild(gamePiece);
-		
+		console.log('after: ' + Qlinqo.foregroundLayer.children);
 		diskBody.CreateFixture(fixDef);
 
 		Qlinqo.ballsLeft--;
