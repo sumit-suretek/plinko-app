@@ -492,7 +492,7 @@ Qlinqo.update = function() {
 
 	for(var i in Qlinqo.foregroundLayer.children)
 	{
-		Qlinqo.foregroundLayer.children[i].update();
+		//Qlinqo.foregroundLayer.children[i].update();
 	}
 	
 	
