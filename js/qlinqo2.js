@@ -24,7 +24,7 @@ window.cancelRequestAnimFrame = ( function() {
 } )();
 
 
-var exports.Qlinqo = {'foregroundLayer':null
+var Qlinqo = {'foregroundLayer':null
 			, 'playfieldLayer':null
 			, 'statusLayer':null
 			, 'gameOverLayer':null
