@@ -45,7 +45,7 @@ var Qlinqo = {'foregroundLayer':null
 			, 'ballsLeft': 5
 			, 'ballsScored':0};
 
-exports.QlinqoSetup = Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
+Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debugLayer, statusLayer, gameOverLayer) {
 
 	//setup sound effects
 	
@@ -1044,6 +1044,7 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		}
 		return ret;
 	};
+	exports.Qlinqo = new Qlinqo;
 
 })(window);
 	
