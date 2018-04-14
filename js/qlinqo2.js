@@ -489,7 +489,7 @@ Qlinqo.update = function() {
 
 		}
 	}
-	
+	console.log(Qlinqo.foregroundLayer.children[i]);return;
 	setInterval(function()   
         {  
 		for(var i in Qlinqo.foregroundLayer.children)
