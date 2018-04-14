@@ -490,14 +490,14 @@ Qlinqo.update = function() {
 		}
 	}
 	console.log(Qlinqo.foregroundLayer.children[i]);return;
-	setInterval(function()   
-        {  
-		for(var i in Qlinqo.foregroundLayer.children)
-		{
-			Qlinqo.foregroundLayer.children[i].update();
-		}
-            Qlinqo.foregroundLayer.needsDisplay = true;//set "dirty" flag  
-        }, 1000/30); 
+// 	setInterval(function()   
+//         {  
+// 		for(var i in Qlinqo.foregroundLayer.children)
+// 		{
+// 			Qlinqo.foregroundLayer.children[i].update();
+// 		}
+//             Qlinqo.foregroundLayer.needsDisplay = true;//set "dirty" flag  
+//         }, 1000/30); 
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
