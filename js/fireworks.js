@@ -1,4 +1,3 @@
-
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
