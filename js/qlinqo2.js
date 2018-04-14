@@ -488,17 +488,16 @@ Qlinqo.update = function() {
           
 
 		}
-	}setInterval(function()   
+	}
+	
+	setInterval(function()   
         {  
-		for(var i in document.foregroundLayer.children)
+		for(var i in Qlinqo.foregroundLayer.children)
 		{
-			document.foregroundLayer.children[i].update();
+			Qlinqo.foregroundLayer.children[i].update();
 		}
-            document.foregroundLayer.needsDisplay = true;//set "dirty" flag  
+            Qlinqo.foregroundLayer.needsDisplay = true;//set "dirty" flag  
         }, 1000/30); 
-	
-	
-	
 
 	Qlinqo.world.Step(
 	   1 / 60   //frame-rate
