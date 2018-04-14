@@ -1,4 +1,4 @@
-(function(){
+(function(exports){
 
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // shim layer with setTimeout fallback
@@ -24,7 +24,7 @@ window.cancelRequestAnimFrame = ( function() {
 } )();
 
 
-var Qlinqo = {'foregroundLayer':null
+var exports.Qlinqo = {'foregroundLayer':null
 			, 'playfieldLayer':null
 			, 'statusLayer':null
 			, 'gameOverLayer':null
@@ -1045,7 +1045,7 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 		return ret;
 	};
 
-})();
+})(window);
 	
 //old qlinqo2.js file
  
