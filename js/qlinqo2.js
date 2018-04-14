@@ -488,13 +488,15 @@ Qlinqo.update = function() {
           
 
 		}
-	}
-	if (Qlinqo.foregroundLayer.children.count>0)
-		console.log(Qlinqo.foregroundLayer.children);
-	for(var i in Qlinqo.foregroundLayer.children)
-	{
-		//Qlinqo.foregroundLayer.children[i].update();
-	}
+	}setInterval(function()   
+        {  
+		for(var i in document.foregroundLayer.children)
+		{
+			document.foregroundLayer.children[i].update();
+		}
+            document.foregroundLayer.needsDisplay = true;//set "dirty" flag  
+        }, 1000/30); 
+	
 	
 	
 
