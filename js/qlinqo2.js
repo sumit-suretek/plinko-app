@@ -1,3 +1,4 @@
+(function(){
 
 
 //http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -1046,6 +1047,7 @@ Qlinqo.Util.parseShadow = function(shadows, em) {
 	};
 
 
+})();
 	
 	
 //old qlinqo2.js file
