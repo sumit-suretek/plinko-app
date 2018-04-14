@@ -1,4 +1,4 @@
-(function(){
+var FW = (function(){
 
 var FW = {
 	'foregroundLayer':null,
@@ -249,6 +249,7 @@ FW.Util.ChangeImageColor = function(/*Image bitmap array*/ bmpArr, /*ColorRGBA*/
 	
 	return retBmpArr;
 };
+	return FW;
  })();
 
 //old fireworks.js
