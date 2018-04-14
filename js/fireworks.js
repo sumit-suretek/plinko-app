@@ -1,7 +1,4 @@
-//Updated 10:21AM
 
-(function(){
-// Js Begins
 var FW = {
 	'foregroundLayer':null,
 	'degreesToRad': Math.PI/180,
@@ -251,8 +248,6 @@ FW.Util.ChangeImageColor = function(/*Image bitmap array*/ bmpArr, /*ColorRGBA*/
 	
 	return retBmpArr;
 };
-// Js Ends
-})();
 
 
 //old fireworks.js
