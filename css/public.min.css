@@ -1,3 +1,38 @@
+.wof-wheel.wof-theme-blue {
+    background: url(../images/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wof-wheel.wof-theme-blue .wof-wheel-bg {
+    background-image: url(../img/wheel-blue.png)
+}
+
+.wof-wheel.wof-theme-blue .wof-pointer-color {
+    fill: #8BC34A
+}
+
+.wof-wheel.wof-theme-blue .wof-title em {
+    color: #8BC34A
+}
+
+.wof-wheel.wof-theme-blue .wof-slice[data-slice="1"],
+.wof-wheel.wof-theme-blue .wof-slice[data-slice="5"],
+.wof-wheel.wof-theme-blue .wof-slice[data-slice="9"] {
+    color: #225378
+}
+
+.wof-wheel.wof-theme-blue button {
+    color: #ffffff;
+    background: #8abe4e;
+}
+
+.wof-wheel.wof-theme-blue .wof-error {
+    border-color: #202020
+}
+
+
+
 .wof-spinning {
     -webkit-animation-duration: 6.5s;
     -webkit-animation-iteration-count: 1;
