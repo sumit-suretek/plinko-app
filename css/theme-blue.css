@@ -1,5 +1,7 @@
 .wof-wheel.wof-theme-blue {
-    background: #a8216b
+    background: url(../images/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .wof-wheel.wof-theme-blue .wof-wheel-bg {
