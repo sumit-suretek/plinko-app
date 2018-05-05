@@ -77,8 +77,8 @@ Qlinqo.Setup = function (playfieldLayer, foregroundLayer, backgroundLayer, debug
 	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(255, 0, 0, 255));//red #ff0000
 	Qlinqo.colors.push(new Qlinqo.Util.ColorRGBA(128, 0, 128, 255));//purple #800080
 	
-	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(21, 86, 241, 1);//(0,128,0,255);
-	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(21, 86, 241, 1);//(0,102,34,255);
+	Qlinqo.defaultFillColor = new Qlinqo.Util.ColorRGBA(36, 185, 240, 1);//(0,128,0,255);
+	Qlinqo.defaultStrokeColor = new Qlinqo.Util.ColorRGBA(36, 185, 240, 1);//(0,102,34,255);
 
 	var groundHeight = 0.1;
 	var scaledWidth = Qlinqo.width/Qlinqo.scale;
