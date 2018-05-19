@@ -2786,7 +2786,7 @@ a.open-demo-blue img{
 }
 
 canvas#lyr_canvasQlinqoBackground1 {
-  background:url('https://rawgit.com/sumit-suretek/plinko-app/master/images/bg.png') !important;
+    background:url(../images/plinko-bg.svg) !important;
     background-size: 100% !important;
     /* box-shadow: 6px 9px 9px 0px #00000066; */
     background-repeat: no-repeat !important;
@@ -2800,7 +2800,7 @@ h1.plinko {
     padding-left: 70px;
     text-shadow: 3px 5px black;
     position: relative;
-    top: 31px;
+    top: 50px;
 }
 /*#outerDiv:before{
 content:"";
